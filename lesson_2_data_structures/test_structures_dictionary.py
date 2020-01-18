@@ -58,7 +58,6 @@ def test_del(create_dict):
     Testing del dict method
     """
     old_len = len(create_dict)
-    old_value = create_dict[1]
     del create_dict[1]
 
     assert (old_len - 1) == len(create_dict)
