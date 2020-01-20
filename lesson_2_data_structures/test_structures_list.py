@@ -4,23 +4,15 @@ import pytest
 
 @pytest.fixture
 def create_list():
-    """
-    :return: list with random len between 5 to 15 with random numbers in range 0 to 10
-    """
+    """ :return: list with random len between 5 to 15 with random numbers in range 0 to 10 """
     return [random.randrange(0, 10) for i in range(random.randrange(5, 15))]
 
 
 @pytest.mark.parametrize("new_element", [
-    5,
-    0,
-    "one",
-    r'!}#@?/\%',
-    ""
+    5, 0, "one", r'!}#@?/\%', ""
 ])
 def test_append(create_list, new_element):
-    """
-    Testing append list method
-    """
+    """ Testing append list method """
     old_len = len(create_list)
 
     create_list.append(new_element)
@@ -30,9 +22,7 @@ def test_append(create_list, new_element):
 
 
 def test_pop(create_list):
-    """
-    Testing pop list method
-    """
+    """ Testing pop list method """
     old_len = len(create_list)
     value = create_list[3]
 
@@ -43,9 +33,7 @@ def test_pop(create_list):
 
 
 def test_reverse(create_list):
-    """
-    Testing reverse list method
-    """
+    """ Testing reverse list method """
     new_list = create_list[:]
     new_list.reverse()
 
@@ -55,9 +43,7 @@ def test_reverse(create_list):
 
 
 def test_sort(create_list):
-    """
-    Testing sort list method
-    """
+    """ Testing sort list method """
     new_list = create_list[:]
     new_list.sort(reverse=True)
     create_list.sort()
@@ -66,9 +52,7 @@ def test_sort(create_list):
 
 
 def test_copy(create_list):
-    """
-    Testing copy list method
-    """
+    """Testing copy list method"""
     new_list = create_list[:]
     copy_list = create_list.copy()
 
